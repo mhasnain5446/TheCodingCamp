@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - {{config['blog_title']}}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #2f2f2f; /* dark grey background */
+    }
+    .card {
+      border-radius: 15px;
+      background-color: #D3D3D3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-4">
+
+        <!-- Fetch image dynamically from JSON -->
+        {% set fname = 'assets/img/'+ config['login_image'] %}
+        <img src="{{ url_for('static', filename=fname) }}" 
+        class="mb-4 mx-auto d-block" 
+        alt="Login Image" 
+        width="120">
+
+
+        <!-- Title from JSON -->
+        <h3 class="text-center mb-4">{{config['blog_title']}}</h3>
+
+        <form action="/dashboard" method="POST">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username Here" required>
+
+          </div>
+
+          <div class="mb-3">
+            
+
+            <div class="mb-3 position-relative">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter Password Here" required>
+                <div class="form-check position-absolute" style="right: 10px; top: 40px;">
+                  <input class="form-check-input" type="checkbox" id="showPassword" onclick="togglePassword()">
+                  <label class="form-check-label" for="showPassword">Show</label>
+                </div>
+              </div>
+
+              <script>
+              function togglePassword() {
+                const pass = document.getElementById("pass");
+                pass.type = pass.type === "password" ? "text" : "password";
+              }
+              </script>
+
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">
+              Remember me
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

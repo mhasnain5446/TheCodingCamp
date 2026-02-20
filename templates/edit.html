@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block content %}
+        <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/bg-add-edit.jpg')}}')">
+
+        <div class="container position-relative px-4 px-lg-5">
+         <div class="row gx-4 gx-lg-5 justify-content-center">
+         <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Panel For Add/Edit Post</h1>
+            <span class="subheading">Here you can Add and Edit Blog </span>
+        </div>
+        </div>
+        </div>
+        </div>
+    </header>
+
+  
+    <!--<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7"> -->
+
+    
+
+        <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7"> 
+                        
+                         <h1>Basic Action</h1>
+                            <a href="/dashboard"><button class="btn btn-primary text-uppercase" style="border-radius:12px;">Dashboard Home</button></a>
+                            <a href="/logout"><button class="btn btn-primary text-uppercase" style="border-radius:12px;">Logout</button></a>
+                            <hr>
+
+                        <h1>ADD/Edit Blog Here</h1>
+                        <div class="my-5">
+                            
+                            <form id="eidtForm" action ="/edit/{{ post.serial_no if post else 0 }}" method="post">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" name="title" type="text" placeholder="Enter your Blog Title here" value ="{{post.title}}"/>
+                                    <label for="title">Blog Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="title:required">Blog Title is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="sub_title" name="sub_title" type="text" placeholder="Enter your Blog Sub Title Here" value="{{post.sub_title}}" />
+                                    <label for="sub_title">Blog Sub Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="sub_title:required">Sub Title is required.</div>  
+                                </div>
+
+                                <div class="form-floating">
+                                    <input class="form-control" id="slug" name="slug" type="text" placeholder="Enter your Blog Slug Here" value="{{post.slug}}" />
+                                    <label for="slug">Blog Slug</label>
+                                    <div class="invalid-feedback" data-sb-feedback="slug:required">A slug for blog is required.</div>
+                                </div>
+
+                                
+                                <div class="form-floating">
+                                    <input class="form-control" id="img_file" name="img_file" type="text" placeholder="Enter your Blog  Background image Name here with its Type"  value="{{post.img_file}}" />
+                                    <label for="img_file">Blog Backgroud Image</label>
+                                    <div class="invalid-feedback" data-sb-feedback="img_file:required">A Background image for blog is required.</div>
+                                </div>
+
+                                <div class="form-floating">
+                                    <input class="form-control" id="post_by" name="post_by" type="text" placeholder="Blog Posted By"  value="{{post.post_by}}" />
+                                    <label for="post_by">Blog Posted By</label>
+                                    <div class="invalid-feedback" data-sb-feedback="post_by:required">An Auther of blog is required.</div>
+                                </div>
+
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="content" name="content" placeholder="Write a Content of your Blog here" style="height: 12rem" >{{post.content}}</textarea>
+                                    <label for="content">Blog Content</label>
+                                    <div class="invalid-feedback" data-sb-feedback="content:required">Content for Blog required.</div>
+                                </div>
+                                <br />
+
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted -->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>  
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" style="border-radius:12px; id="submitButton" type="submit">Send</button>
+                            </form>
+                        </div>
+                    <!--</div> -->
+                </div>
+            </div>
+        
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql+pymysql://root:@localhost/TheCodingCamp",
+    "prod_uri": "mysql+pymysql://root:@localhost/TheCodingCamp"
+
+  },
+
+  "params_html": {
+    "blog_name": "TheCodingCamp",
+    "blog_title": "Coding Camp",
+    "sub_heading": "A Place Like Haven For Coder's",
+    "no_of_posts": 2
+  },
+
+  "email_params": {
+    "gmail_user": "mixthings02@gmail.com",
+    "gmail_password": "cqax uulj boph eqzy"
+  },
+
+  "login_params": {
+    "admin_username": "mhasnain1122",
+    "admin_password": "Hasnain@123",
+    "login_image": "login2.jpg"
+  },
+
+  "about_params": {
+    "about_text": "Welcome to TheCodingCamp — A Place like Haven for Coders.\nThis platform is built with one purpose: to create a space where learners, developers, and technology enthusiasts can explore, build, and grow together.\nFounded by Muhammad Hasnain, a passionate Software Engineer, TheCodingCamp aims to make programming simple, structured, and accessible for everyone. Whether you are just starting your coding journey or already experienced in the field, this platform offers a collection of tutorials, blogs, and practical insights to help you strengthen your skills.\nAt TheCodingCamp, learning is not just about writing code — it’s about understanding how technology works and how to build meaningful solutions. From web development and Python tutorials to Flask-based projects and best practices, each post is crafted to guide you step-by-step with clarity and purpose.\nWe believe that coding should be both creative and logical, and that everyone deserves a place to learn without unnecessary complexity. That’s what TheCodingCamp stands for — a supportive community, rich content, and a clear path toward becoming a better developer.\nJoin us as we continue to expand this digital haven — where coders learn, share, and inspire one another.\nTheCodingCamp — A Place like Haven for Coders."
+
+  },
+
+  "uploder_param": {
+    "uplode_location": "//home//mhasnain//Python_Sources//PycharmProjects//Python_Flask_Project//static"
+  }
+}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block content %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/bg-admin.jpg')}}')">
+
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Here you can Eidth and Delete Your Posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+  
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-12 col-lg-8 col-xl-10">
+
+        <h1>Basic Action</h1>
+            <a href="/edit/0"><button class="btn btn-primary text-uppercase" style="border-radius:12px;">Add New Post</button></a>
+            <a href="/logout"><button class="btn btn-primary text-uppercase" style="border-radius:12px;">Logout</button></a>
+            <hr>
+
+        
+        <h1>Uplode Your File Here</h1>
+
+        <form action="/uploader" method = "post" enctype="multipart/form-data"> 
+            <input type="file" name="file1">
+            <button class="btn btn-primary" style="border-radius: 12px"; > Save </button>
+
+        </form>
+        
+        <hr>
+
+        <h1>Eidt File</h1>
+
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+
+            <th>SNO</th>
+            <th>Post Title</th>
+            <th>Date</th>
+            <th>Eidt</th>
+            <th>Delete</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for post in posts %}
+        
+          <tr>
+            <td>{{post.serial_no }}</td>
+            <td>{{post.title }}</td>
+            <td>{{post.date }}</td>
+            <td><a href="/edit/{{post.serial_no}}"><button class="btn btn-primary text-uppercase" style="border-radius:12px;" href="#!">Edit</button></a></td>
+            <td><a href="/delete/{{post.serial_no}}"><button class="btn btn-primary text-uppercase" style="border-radius:12px;" href="#!">Delete</button></a></td>
+
+   
+        {% endfor %}
+
+        </tbody> 
+        </table>
+                    
+                    <!-- Pager-->
+                   <!-- <div class="d-flex justify-content-end mb-4"><button class="btn btn-primary text-uppercase" style="border-radius:12px;" href="#!">Older Posts →</button></div> -->
+                </div>
+            </div>
+        </div>
+{% endblock %}
