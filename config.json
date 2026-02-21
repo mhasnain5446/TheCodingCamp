@@ -14,13 +14,13 @@
   },
 
   "email_params": {
-    "gmail_user": "mixthings02@gmail.com",
-    "gmail_password": "cqax uulj boph eqzy"
+    "gmail_user": "enter a gimal here on which you want to recive message of contact page",
+    "gmail_password": "past your gmail app authentication key Here"
   },
 
   "login_params": {
-    "admin_username": "mhasnain1122",
-    "admin_password": "Hasnain@123",
+    "admin_username": "Create Username here",
+    "admin_password": "set password here",
     "login_image": "login2.jpg"
   },
 
